@@ -60,31 +60,7 @@ func getAllIPsFromJson(j []byte) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	ss := [][]string{
-		dsir.Synthetics.PrefixesIpv4,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsApNortheast1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsApNortheast2,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsApSouth1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsApSoutheast1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsApSoutheast2,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsCaCentral1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsEuCentral1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsEuNorth1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsEuWest1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsEuWest2,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsEuWest3,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsSaEast1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsUsEast2,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsUsWest1,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AwsUsWest2,
-		dsir.Synthetics.PrefixesIpv4ByLocation.AzureEastus,
-	}
-
-	var IPs []string
-	for _, s := range ss {
-		IPs = append(IPs, s...)
-	}
-	return IPs, nil
+	return dsir.Synthetics.PrefixesIpv4, nil
 }
 
 func Process() error {
